@@ -17,7 +17,18 @@ const DrumPad = ({ id, sound, name, code, displayMessage, power }) => {
     playSound();
   };
 
-  
+  useEffect(() => {
+    const playWithKey = (e) => {
+      if (e.keyCode === code) {
+        playSound();
+      }
+    };
+
+    document.addEventListener('keydown', playWithKey);
+    return () => {
+      document.removeEventListener('keydown', playWithKey);
+    };
+  }, []);
 
   return (
     <div id={name} className='drum-pad' onClick={handleClick}>
