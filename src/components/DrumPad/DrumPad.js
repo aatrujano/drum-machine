@@ -28,7 +28,7 @@ const DrumPad = ({ id, sound, name, code, displayMessage, power }) => {
     return () => {
       document.removeEventListener('keydown', playWithKey);
     };
-  }, []);
+  }, [power]);
 
   return (
     <div id={name} className='drum-pad' onClick={handleClick}>
