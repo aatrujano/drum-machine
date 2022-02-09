@@ -1,0 +1,11 @@
+.outerContainer {
+    min-width: 40rem;
+    max-width: 40rem;
+    height: 25rem;
+    background-color: rgb(26, 26, 26);
+    border-radius: 5px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

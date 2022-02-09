@@ -1,0 +1,16 @@
+.drumPadContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.drum-pad {
+    width: 6rem;
+    height: 6rem;
+    background-color: gainsboro;
+    border-radius: 3px;
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8f8f8f;
+}

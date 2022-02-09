@@ -1,0 +1,55 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.powerButton {
+  width: 2.5rem;
+  background-color: darkgray;
+  padding: 0.2rem 0.2rem;
+  border-radius: 30px;
+  display: flex;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+
+.powerButton.on {
+  flex-direction: row-reverse;
+}
+
+.powerButton.on .powerIndicator {
+    background: radial-gradient(#00b900, #018301);
+    box-shadow: 0px 0px 12px lime;
+  }
+
+.powerIndicator {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: red;
+  box-shadow: inset 0px 0px 6px #4a0000;
+}
+
+.display {
+  width: 10rem;
+  padding: .5rem;
+  background-color: #080808;
+  box-shadow: inset 2px 2px 3px 0px #000000;
+  border-radius: 3px;
+}
+
+.displayText {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
+
+.display.off {
+    color: #7200008c;
+}
+.display.on {
+  color: green;
+  text-shadow: 0 0 15px #00ff0045;
+}

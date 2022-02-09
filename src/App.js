@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+// STYLE
 import './App.css';
 
+// COMPONENTS
+import DrumMachine from './components/DrumMachine/DrumMachine';
+
+// HOOKS
+import { useState } from 'react';
+
+// DATA
+import { soundsArr } from './soundData';
+
 function App() {
+  const [sounds] = useState(soundsArr);
+  const [display, setDisplay] = useState('Off');
+  const [power, setPower] = useState(false);
+
+  const togglePower = () => {
+    setPower((prev) => !prev);
+    setDisplay(!power ? 'On' : 'Off');
+  };
+
+  const displayMessage = (message) => {
+    if (power === true && display !== 'Off') {
+      setDisplay(message);
+      setTimeout(() => {
+        setDisplay('----');
+      }, 1000);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <DrumMachine
+        display={display}
+        sounds={sounds}
+        power={power}
+        togglePower={togglePower}
+        displayMessage={displayMessage}
+      />
     </div>
   );
 }
