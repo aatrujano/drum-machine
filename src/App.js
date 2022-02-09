@@ -12,8 +12,8 @@ import { soundsArr } from './soundData';
 
 function App() {
   const [sounds] = useState(soundsArr);
-  const [display, setDisplay] = useState('Off');
-  const [power, setPower] = useState(false);
+  const [display, setDisplay] = useState('On');
+  const [power, setPower] = useState(true);
 
   const togglePower = () => {
     setPower((prev) => !prev);
